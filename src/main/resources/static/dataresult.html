@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/dataresult.css">
+    <link rel="stylesheet" href="css/simulator.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Resultado dos Dados - SENAI</title>
+</head>
+<body>
+<div class="point"></div>
+<div class="page-wrapper">
+
+    <header class="main-header">
+
+        <div class="logo-container">
+            <div class="logo-badge">SENAI</div>
+            <div class="logo-subtitle">
+                Tecnologia<br>& Educação
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Página Inicial</a>
+            <a href="simulator.html" class="nav-link">Simulador</a>
+            <a href="#" class="nav-link">Dados</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="themeToggle" class="theme-toggle-btn" title="Alternar Tema">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
+
+            <a href="#" class="btn-portal">Portal Aluno</a>
+
+            <a href="simulator.html" class="btn-simular">
+                <i class="fa-solid fa-microchip"></i> Simular Agora
+            </a>
+        </div>
+
+    </header>
+
+    <main class="main-content">
+
+        <div class="control-header-card">
+            <div class="control-info">
+                <span class="live-badge"><i class="fa-solid fa-circle pulse-icon"></i> TELEMETRIA E REDE IOT</span>
+                <h1>Painel Geral de Dispositivos</h1>
+                <p>Acompanhe em tempo real o status, métricas e histórico das estações meteorológicas monitoradas.</p>
+            </div>
+
+            <div class="control-actions">
+                <button class="btn-action btn-reset" onclick="carregarDadosIntegrados()">
+                    <i class="fa-solid fa-arrows-rotate"></i> Atualizar Agora
+                </button>
+            </div>
+        </div>
+
+        <div class="metrics-overview">
+            <div class="metric-card">
+                <span class="material-symbols-outlined metric-icon">thermostat</span>
+                <div class="metric-data">
+                    <span class="metric-title">Temp. Média</span>
+                    <span class="metric-value" id="avg-temp">-- °C</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <span class="material-symbols-outlined metric-icon">water_drop</span>
+                <div class="metric-data">
+                    <span class="metric-title">Umidade Média</span>
+                    <span class="metric-value" id="avg-umid">-- %</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <span class="material-symbols-outlined metric-icon">air</span>
+                <div class="metric-data">
+                    <span class="metric-title">Pressão Média</span>
+                    <span class="metric-value" id="avg-pres">-- hPa</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <span class="material-symbols-outlined metric-icon">sensors</span>
+                <div class="metric-data">
+                    <span class="metric-title">Dispositivos Exibidos</span>
+                    <span class="metric-value" id="active-count">0 Exibido(s)</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="devices-section">
+            <div class="section-header">
+                <h3><i class="fa-solid fa-network-wired"></i> Dispositivos Monitorados</h3>
+
+                <div class="filter-box">
+                    <select id="deviceFilter" onchange="aplicarFiltroDispositivo()">
+                        <option value="todos">Todos os Dispositivos</option>
+                        <option value="1">DEV-01 | Estação Anchieta Central</option>
+                        <option value="2">DEV-02 | Bloco Eletrônica</option>
+                        <option value="3">DEV-03 | Lab Mecatrônica</option>
+                        <option value="4">DEV-04 | Estação Externa</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="devices-grid" id="devices-grid-container"></div>
+        </section>
+
+        <section class="table-section">
+            <div class="section-header">
+                <h3><i class="fa-solid fa-database"></i> Últimos Logs de Transmissão</h3>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                    <tr>
+                        <th>Data / Hora</th>
+                        <th>Dispositivo</th>
+                        <th>Temp. (°C)</th>
+                        <th>Umidade (%)</th>
+                        <th>Pressão (hPa)</th>
+                        <th>Luminosidade (lx)</th>
+                        <th>Qualidade Ar (%)</th>
+                        <th>Sinal Wi-Fi (%)</th>
+                    </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="js/dataresult.js"></script>
+</body>
+</html>

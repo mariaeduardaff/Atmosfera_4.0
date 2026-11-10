@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENAI | Tecnologia & Educação</title>
+
+  <link rel="stylesheet" href="css/index.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="point"></div>
+<div class="page-wrapper">
+
+  <header class="main-header">
+    <div class="logo-container">
+      <div class="logo-badge">SENAI</div>
+      <div class="logo-subtitle">
+        Tecnologia<br>& Educação
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#" class="nav-link">Página Inicial</a>
+      <a href="simulator.html" class="nav-link">Simulador</a>
+      <a href="dataresult.html" class="nav-link">Dados</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="themeToggle" class="theme-toggle-btn" title="Alternar Tema">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+      </button>
+
+      <a href="#" class="btn-portal">Portal Aluno</a>
+
+      <a href="simulator.html" class="btn-simular">
+        <i class="fa-solid fa-microchip"></i> Simular Agora
+      </a>
+    </div>
+  </header>
+
+  <main class="main-hero">
+    <div class="hero-left">
+
+      <h1 class="hero-title">
+        Inovação que une.<br>
+        <span class="text-highlight-red">Tecnologia</span> que<br>
+        <span class="text-gradient-future">pertence a todos</span>.
+      </h1>
+
+      <p class="hero-description">
+        O projeto Atmosfera 4.0 une Desenvolvimento de Sistemas, Eletrônica e
+        Mecatrônica na criação de uma estação meteorológica comunitária idealizada na Escola SENAI "Anchieta".
+      </p>
+
+      <div class="cta-group">
+        <a href="dataresult.html" class="btn-primary-start">
+          Ver dados <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- GERADOR DE HOLOGRAMA HALFTONE 3D -->
+    <div class="hero-right">
+      <div class="card-hologram">
+
+        <div class="canvas-container">
+          <canvas id="halftoneHeroCanvas"></canvas>
+
+          <div class="canvas-floating-bar">
+            <div class="floating-text">
+              <i class="fa-solid fa-up-down-left-right" style="color: var(--senai-red);"></i>
+              <span>Arraste ou passe o mouse para distorcer a onda</span>
+            </div>
+            <span style="font-family: monospace; color: #94a3b8;">121 FPS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/index.js"></script>
+</body>
+</html>
