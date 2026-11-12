@@ -25,7 +25,6 @@ function sortearMedia(minId, maxId) {
     const maxVal = parseFloat(document.getElementById(maxId)?.value);
 
     if (!isNaN(minVal) && !isNaN(maxVal) && minVal <= maxVal) {
-        // CORRIGIDO: Operador de subtração (-)
         const sorteado = Math.random() * (maxVal - minVal) + minVal;
         return parseFloat(sorteado.toFixed(1));
     } else if (!isNaN(minVal)) {
@@ -79,7 +78,6 @@ function alternarSimulacao() {
         executarEnvio();
 
         const segundos = parseInt(document.getElementById('time-simulator')?.value) || 2;
-        // CORRIGIDO: Multiplicação (*) por 1000
         intervalId = setInterval(executarEnvio, segundos * 1000);
 
     } else {
@@ -141,7 +139,6 @@ async function executarEnvio() {
 
     atualizarExibicaoLEDs(atuadores);
 
-    // 1. ENVIO DOS DADOS DE TELEMETRIA (REGISTROS)
     try {
         const response = await fetch(API_REGISTROS_URL, {
             method: 'POST',
