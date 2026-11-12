@@ -46,9 +46,9 @@ Com o servidor ativo, o sistema disponibiliza três ambientes web prontos para u
 
 | Tela | Rota de Acesso | Descrição |
 | :--- | :--- | :--- |
-| ** Início** | `http://localhost:8080/index.html` | Portal principal de navegação e visão geral do Atmosfera 4.0. |
-| ** Simulador** | `http://localhost:8080/simulator.html` | Painel interativo para simular o envio de dados dos sensores IoT. |
-| ** Resultados** | `http://localhost:8080/dataresult.html` | Visualização e consulta dos registros salvos no banco de dados. |
+| Início | `http://localhost:8080/index.html` | Portal principal de navegação e visão geral do Atmosfera 4.0. |
+| Simulador | `http://localhost:8080/simulator.html` | Painel interativo para simular o envio de dados dos sensores IoT. |
+| Resultados | `http://localhost:8080/dataresult.html` | Visualização e consulta dos registros salvos no banco de dados. |
 
 ---
 
